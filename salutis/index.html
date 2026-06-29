@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salutis da Amazônia</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <img src="logo.jpg" alt="Salutis da Amazônia">
+                <span>Salutis da Amazônia</span>
+            </div>
+
+            <ul class="menu">
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Salutis da Amazônia</h1>
+
+            <p>
+                Soluções em materiais hospitalares e participação em
+                processos licitatórios.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#produtos" class="btn">
+                    Conheça nossos Produtos
+                </a>
+
+                <a href="https://wa.me/5592991152359?text=Bom%20dia,%20gostaria%20de%20ver%20seu%20cat%C3%A1logo."
+                    target="_blank" class="btn btn-outline">
+
+                    Fale Conosco
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="sobre" class="section">
+
+        <h2>Sobre Nós</h2>
+
+        <p>
+            A Salutis da Amazônia é uma empresa especializada na comercialização de materiais hospitalares,
+            oferecendo produtos de qualidade para atender às necessidades de hospitais, clínicas,
+            consultórios e demais instituições de saúde.
+            Comprometida com a excelência no atendimento e a confiabilidade de seus produtos,
+            a empresa também se destaca por sua forte atuação social. Há mais de 10 anos, sua diretora,
+            Vivia Barreto, dedica-se a ações beneficentes voltadas para crianças em situação de vulnerabilidade,
+            promovendo a doação de brinquedos, roupas e alimentos, além da realização de eventos solidários.
+            Mais do que fornecer materiais hospitalares, a Salutis da Amazônia busca gerar impacto positivo na
+            sociedade,
+            unindo qualidade, responsabilidade e compromisso com o bem-estar da comunidade.
+
+        </p>
+
+    </section>
+
+    <section id="produtos" class="section">
+
+        <h2>Produtos</h2>
+
+
+        <div class="produtos-grid">
+
+
+            <div class="produto-card">
+
+                <i class="fa-solid fa-hand"></i>
+
+                <h3>Luvas Hospitalares</h3>
+
+                <button onclick="adicionarProduto('Luvas Hospitalares')">
+                    Adicionar ao Carrinho
+                </button>
+
+            </div>
+
+
+
+            <div class="produto-card">
+
+                <i class="fa-solid fa-head-side-mask"></i>
+
+                <h3>Máscaras</h3>
+
+                <button onclick="adicionarProduto('Máscaras')">
+                    Adicionar ao Carrinho
+                </button>
+
+            </div>
+
+
+
+
+            <div class="produto-card">
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+                <h3>Aventais</h3>
+
+                <button onclick="adicionarProduto('Aventais')">
+                    Adicionar ao Carrinho
+                </button>
+
+            </div>
+
+
+
+            <div class="produto-card">
+
+                <i class="fa-solid fa-droplet"></i>
+
+                <h3>Equipos</h3>
+
+                <button onclick="adicionarProduto('Equipos')">
+                    Adicionar ao Carrinho
+                </button>
+
+            </div>
+
+
+
+            <div class="produto-card">
+
+                <i class="fa-solid fa-syringe"></i>
+
+                <h3>Seringas</h3>
+
+                <button onclick="adicionarProduto('Seringas')">
+                    Adicionar ao Carrinho
+                </button>
+
+            </div>
+
+
+
+            <div class="produto-card">
+
+                <i class="fa-solid fa-staff-snake"></i>
+
+                <h3>Agulhas</h3>
+
+                <button onclick="adicionarProduto('Agulhas')">
+                    Adicionar ao Carrinho
+                </button>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BOTÃO CARRINHO -->
+
+    <div class="cart-icon" onclick="abrirCarrinho()">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <span id="contador">0</span>
+
+    </div>
+
+
+
+    <!-- FUNDO ESCURO -->
+
+    <div id="overlay" onclick="fecharCarrinho()"></div>
+
+
+
+
+    <!-- CARRINHO -->
+
+    <div id="carrinho">
+
+
+        <div class="cart-header">
+
+            <h2>Meu Carrinho</h2>
+
+
+            <button onclick="fecharCarrinho()">
+                X
+            </button>
+
+
+        </div>
+
+
+
+        <div id="listaCarrinho"></div>
+
+
+
+        <div class="cart-footer">
+
+
+            <button class="voltar" onclick="fecharCarrinho()">
+
+                Continuar Produtos
+
+            </button>
+
+
+
+            <button class="finalizar" onclick="finalizarCompra()">
+
+                Finalizar Pedido
+
+            </button>
+
+
+
+        </div>
+
+
+    </div>
+
+    <section class="section diferenciais">
+
+        <h2>Nossos Diferenciais</h2>
+
+        <div class="diferenciais-grid">
+
+            <div>✔ Produtos Certificados</div>
+            <div>✔ Participação em Licitações</div>
+            <div>✔ Atendimento Especializado</div>
+            <div>✔ Entregas Ágeis</div>
+            <div>✔ Qualidade Garantida</div>
+            <div>✔ Suporte ao Cliente</div>
+
+        </div>
+
+    </section>
+
+    <section id="contato" class="section">
+
+        <h2>Contato</h2>
+
+        <div class="contatos">
+
+            <a href="https://www.instagram.com/salutisdaamazonia/" target="_blank">
+
+                <i class="fab fa-instagram"></i>
+                Instagram
+            </a>
+
+            <a href="https://wa.me/5592991152359?text=Bom%20dia,%20gostaria%20de%20ver%20seu%20cat%C3%A1logo."
+                target="_blank">
+
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+    <section id="localizacao" class="section">
+
+        <h2>Localização</h2>
+
+        <iframe
+            src="https://maps.google.com/maps?q=R.%20Itaet%C3%AA%20122%20Novo%20Aleixo%20Manaus&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="450" style="border:0;" loading="lazy">
+        </iframe>
+
+    </section>
+
+    <footer>
+
+        <p>
+            © 2026 Salutis da Amazônia - Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+    <a href="https://wa.me/5592991152359?text=Bom%20dia,%20gostaria%20de%20ver%20seu%20cat%C3%A1logo."
+        class="whatsapp-float" target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+</body>
+<script src="script.js"></script>
+
+</html>
