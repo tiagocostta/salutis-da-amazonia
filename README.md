@@ -64,6 +64,8 @@ Novos produtos poderão ser adicionados futuramente.
 - Google Maps Embed
 
 ---
-
+## Tela Inicial
+![Tela do Site](imagem-site.png)
+---
 ## 📂 Estrutura do Projeto
 
